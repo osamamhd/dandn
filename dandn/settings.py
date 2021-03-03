@@ -25,10 +25,12 @@ SECRET_KEY = 'u-2@gh6#n0_k$exyk=!y19r$t$@q-2$6$7c$r-!2s))=s&z+^&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['dreamsandnightmares.pythonanywhere.com']
+ALLOWED_HOSTS = ['dreamsandnightmares.pythonanywhere.com', '127.0.0.1']
 
 
 # Application definition
+
+TAILWIND_APP_NAME = 'frontend'
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -37,6 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # 3rd party 
+    'tailwind',
+    'frontend',
+
 ]
 
 MIDDLEWARE = [
