@@ -30,7 +30,6 @@ ALLOWED_HOSTS = ['dreamsandnightmares.pythonanywhere.com', '127.0.0.1']
 
 # Application definition
 
-# TAILWIND_APP_NAME = 'frontend'
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -41,8 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # 3rd party 
-    # 'tailwind',
-    # 'frontend',
+    'tailwind',
+    'frontend',
 
 ]
 
@@ -55,6 +54,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+TAILWIND_APP_NAME = 'frontend'
 
 ROOT_URLCONF = 'dandn.urls'
 
