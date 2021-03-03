@@ -30,7 +30,7 @@ ALLOWED_HOSTS = ['dreamsandnightmares.pythonanywhere.com', '127.0.0.1']
 
 # Application definition
 
-TAILWIND_APP_NAME = 'frontend'
+# TAILWIND_APP_NAME = 'frontend'
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -41,8 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # 3rd party 
-    'tailwind',
-    'frontend',
+    # 'tailwind',
+    # 'frontend',
 
 ]
 
@@ -61,7 +61,7 @@ ROOT_URLCONF = 'dandn.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'frontend/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
