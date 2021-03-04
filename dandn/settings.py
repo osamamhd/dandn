@@ -43,6 +43,9 @@ INSTALLED_APPS = [
     'tailwind',
     'frontend',
 
+    # local apps
+    'main.apps.MainConfig'
+
 ]
 
 MIDDLEWARE = [
