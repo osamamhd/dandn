@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 django = "*"
 django-tailwind = "*"
+django-autoslug = "*"
 
 [requires]
 python_version = "3.8"
