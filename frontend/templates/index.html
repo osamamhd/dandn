@@ -1,6 +1,17 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
 
+<div class="grid grid-cols-2 py-6">
+    <div class="col-span-2 md:col-span-1 flex m-6 justify-center md:justify-end"><img src="{% static 'img/t-img.svg' %}" alt=""></div>
+    <div class="col-span-2 md:col-span-1 flex justify-center">
+        <p class="flex justify-center mx-6 text-4xl md:text-7xl font-serif font-black my-auto text-center md:text-left">Write a story about your dreams or nightmares!</p>
+    </div>
+</div>
 
+<!-- <div class="grid grid-cols-2 py-6 bg-black">
+    <div class="col-span-1 flex justify-end"></div>
+    <div class="col-span-1 flex justify-center">
+    </div>
+</div> -->
 {% endblock content %}
