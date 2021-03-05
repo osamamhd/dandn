@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class=" md:w-7/12 mx-auto">
+
+    {% for story in object_list %}
+
+        <div class="my-6 mx-5 md:mx-10 border-black border-b-2 shadow-lg">
+            <div class="bg-gray-100 p-8">
+
+                <div class="grid grid-cols-2 md:grid-cols-4 border-black border-b-2">
+                    <div class="col-span-1 md:col-span-3">
+                        <p class="text-base md:text-xl font-serif font-bold uppercase">{{ story.title|truncatechars:10}}</p>
+                    </div>
+
+                    <div class="col-span-1 md:col-span-1">
+                        <p class="text-base md:text-xl font-serif flex justify-end">{{ story.pub_date}}</p>
+                    </div>
+                </div>
+
+                <div class="pt-2">
+                    <p class="text-black text-justify">{{ story.body|truncatechars:400 }}</p>
+                </div>
+
+                <div class="grid grid-cols-5 md:grid-cols-3 gap-3 md:gap-6 mt-6">
+
+                    <div class="col-span-1 bg-gray-50  border-black border-b-2 border-r-2 hover:shadow-xl">
+                        <svg class="w-7 m-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 13l-7 7-7-7m14-8l-7 7-7-7" />
+                        </svg>
+                    </div>
+
+                    <div class="col-span-3 md:col-span-1 bg-gray-50 border-black border-b-2 border-r-2 hover:shadow-xl ">
+                        <p class="text-sm md:text-base font-serif flex justify-center pt-1">Points: {{ story.points }}</p>
+                    </div>
+
+                    <div class="col-span-1 bg-gray-50 border-black border-b-2 border-r-2 hover:shadow-xl">
+                        <svg class="w-7 m-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11l7-7 7 7M5 19l7-7 7 7" />
+                        </svg>
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+
+    {% endfor %}
+
+</div>
+
+{% endblock content %}
