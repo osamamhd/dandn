@@ -2,9 +2,9 @@
 {% load static %}
 {% block content %}
 
-<div class="grid grid-cols-2 py-16 md:py-6">
+<div class="grid grid-cols-2 py-16 md:py-1">
     <div class="col-span-2 md:col-span-1 
-                flex md:m-6 justify-center 
+                flex md:m-1 justify-center 
                 md:justify-end py-10">
                 <img src="{% static 'img/b1-img.svg' %}" alt="">
         <!-- Created by Nithinan Tatah from the Noun Project -->
@@ -13,20 +13,33 @@
         <p class="flex justify-center mx-6 
                     text-4xl md:text-6xl font-serif
                      font-black my-auto text-center
-                      md:text-left">
+                      md:text-left text-gray-800">
                       Write a story about your dreams or nightmares!
                     </p>
     </div>
 </div>
 
-<div class="grid grid-cols-2 py-20 md:py-6 bg-black">
-    <div class="col-span-2 md:col-span-1 flex justify-end">
-        <p class="text-white flex justify-center
-                         mx-6 text-4xl md:text-6xl 
-                         font-serif font-black my-auto
-                         text-center md:text-right">
-                         Every one of us has that kind of story, 
-                         so what's you dreamt about last night.
+<div class="flex justify-center gap-5 md:gap-10 pb-10">
+    <div class="bg-gray-100 px-12 py-6 hover:bg-gray-50
+                border-b-2 border-r-2 border-gray-800
+                hover:shadow-lg ml-6">
+        <a href="#" class="text-gray-800 font-serif font-bold">Write your story...</a>
+    </div>
+    <div class="bg-gray-100 px-10 py-6 hover:bg-gray-50
+                border-b-2 border-r-2 border-gray-800
+                hover:shadow-lg mr-6">
+        <a href="{% url 'story_list' %}" class="text-gray-800 font-serif font-bold">Read some stories...</a>
+    </div>
+</div>
+
+<div class="grid grid-cols-2 py-20 md:py-6 bg-gray-800">
+    <div class="col-span-2 md:col-span-1  flex justify-end">
+        <p class="text-gray-100 mx-6
+                    md:ml-20 text-4xl md:text-5xl 
+                    font-serif font-black my-auto
+                    text-center md:text-right">
+                    Every one of us has that kind of story, 
+                    so what's you dreamt of last night.
         </p>
     </div>
     <div class="col-span-2 md:col-span-1
@@ -34,6 +47,18 @@
                  md:justify-start">
                  <img src="{% static 'img/b2-img.svg' %}" alt="">
         <!-- Created by ruliani2018 from the Noun Project -->
+    </div>
+</div>
+<div class="flex justify-center gap-5 md:gap-10 pb-10 bg-gray-800">
+    <div class="bg-gray-800 px-12 py-6 hover:bg-gray-700
+                border-b-2 border-r-2 border-gray-100
+                hover:shadow-lg ml-6">
+        <a href="#" class="text-gray-100 font-serif font-bold">Write your story...</a>
+    </div>
+    <div class="bg-gray-800 px-10 py-6 hover:bg-gray-700
+                border-b-2 border-r-2 border-gray-100
+                hover:shadow-lg mr-6">
+        <a href="{% url 'story_list' %}" class="text-gray-100 font-serif font-bold">Read some stories...</a>
     </div>
 </div>
 {% endblock content %}
