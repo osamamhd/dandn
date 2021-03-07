@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     # 3rd party 
     'tailwind',
     'frontend',
+    'crispy_forms',
+    'crispy_tailwind',
 
     # local apps
     'main.apps.MainConfig'
@@ -59,6 +61,11 @@ MIDDLEWARE = [
 ]
 
 TAILWIND_APP_NAME = 'frontend'
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
+
+CRISPY_TEMPLATE_PACK = "tailwind"
+
 
 ROOT_URLCONF = 'dandn.urls'
 
