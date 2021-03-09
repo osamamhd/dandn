@@ -16,12 +16,13 @@
                     </div>
 
                     <div class="col-span-1 md:col-span-1">
-                        <p class="text-base md:text-xl font-serif flex justify-end {{ story.type_of_story }}">{{ story.pub_date|date:"M.d.Y" }}</p>
+                        <p class="text-base md:text-xl font-serif flex justify-end {{ story.type_of_story }}">{{ story.pub_date|date:"M.d.Y" }} </p>
                     </div>
                 </div>
 
                 <div class="pt-2">
-                    <p class="{{ story.type_of_story }} text-justify">{{ story.body|truncatechars:400 }}</p>
+                    <span class="{{ story.type_of_story }} text-justify">{{ story.body|truncatechars:400 }}</span>
+                    <a class="{{ story.type_of_story }} underline" href="{% url 'story_detail' story.slug %}">Read More...</a>
                 </div>
 
                 <div class="grid grid-cols-5 md:grid-cols-3 gap-3 md:gap-6 mt-6">
