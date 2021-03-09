@@ -9,7 +9,7 @@ TYPES = (
 
 class Story(models.Model):
     title = models.CharField(max_length=200)
-    slug = AutoSlugField(populate_from='title')
+    slug = AutoSlugField(populate_from='title', unique_with='pub_date__month')
     body = models.TextField(blank=True)
     pub_date = models.DateTimeField(auto_now_add=True)
     type_of_story = models.CharField(max_length=20, choices=TYPES, default='dream')
