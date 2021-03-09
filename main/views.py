@@ -14,3 +14,7 @@ class StoryCreateView(generic.CreateView):
 
     def get_success_url(self):
         return reverse('story_list')
+
+class  StoryDetailView(generic.DetailView):
+    model = Story
+    template_name = 'story_detail.html'
