@@ -8,6 +8,8 @@ django = "*"
 django-tailwind = "*"
 django-autoslug = "*"
 crispy-tailwind = "*"
+django-rest-framework = "*"
+django-cors-headers = "*"
 
 [requires]
 python_version = "3.8"
