@@ -8,6 +8,7 @@ TYPES = (
 )
 
 class Story(models.Model):
+    id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=200)
     slug = AutoSlugField(populate_from='title', unique_with='pub_date__month')
     body = models.TextField(blank=True)
@@ -20,3 +21,6 @@ class Story(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return f'/{self.slug}/'
