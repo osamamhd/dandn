@@ -9,6 +9,7 @@ from rest_framework.response import Response
 from .serializers import StorySerializer
 from django.http import Http404
 from rest_framework import status
+from rest_framework import generics
 
 
 class StoryListView(generic.ListView):
@@ -27,20 +28,38 @@ class  StoryDetailView(generic.DetailView):
     model = Story
     template_name = 'story_detail.html'
 
+"""
+    API VIEWS
+"""
 
 """
-    GET  ===>>> 'stories/api/list'
-    POST ===>>> 'stories/api/list'
+    GET/POST  ===>>> 'stories/api/list/dreams'
 """
-class StoryList(APIView):
-    def get(self, request, format=None):
-        stories = Story.objects.all()
-        serilizer = StorySerializer(stories, many=True)
-        return Response(serilizer.data)
+class DreamStoryList(generics.ListCreateAPIView):
+    queryset = Story.objects.filter(type_of_story="dream")
+    serializer_class = StorySerializer
 
-    def post(self, request, format=None):
-        serializer = StorySerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+"""
+    GET/POST  ===>>> 'stories/api/list/nightmares'
+"""
+class NightmareStoryList(generics.ListCreateAPIView):
+    queryset = Story.objects.filter(type_of_story="nightmare")
+    serializer_class = StorySerializer
+
+
+"""
+    GET  ===>>> 'stories/api/id/'
+"""
+class StoryDetail(APIView):
+
+    def get_object(self, pk):
+        try:
+            return Story.objects.get(pk=pk)
+        except Story.DoesNotExit:
+            raise Http404
+
+    def get(self, request, pk, format=None):
+        story = self.get_object(pk)
+        serializer = StorySerializer(story)
+        return Response(serializer.data)

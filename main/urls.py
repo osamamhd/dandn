@@ -7,5 +7,7 @@ urlpatterns = [
     path('<slug:slug>/', views.StoryDetailView.as_view(), name='story_detail'),
 
     # URLs for endpoints 
-    path('api/list/', views.StoryList.as_view())
+    path('api/list/dreams/', views.DreamStoryList.as_view()),
+    path('api/list/nightmares/', views.NightmareStoryList.as_view()),
+    path('api/<int:pk>/', views.StoryDetail.as_view()),
 ]
