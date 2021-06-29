@@ -10,6 +10,7 @@ from .serializers import StorySerializer
 from django.http import Http404
 from rest_framework import status
 from rest_framework import generics
+from rest_framework.decorators import api_view
 
 
 class StoryListView(generic.ListView):
@@ -63,3 +64,25 @@ class StoryDetail(APIView):
         story = self.get_object(pk)
         serializer = StorySerializer(story)
         return Response(serializer.data)
+
+
+@api_view(['POST', ])
+def story_upvote(request, pk):
+    story = generics.get_object_or_404(Story, pk=pk)
+    story.points += 1
+    story.save()
+    data = {
+        'success': True
+    }
+    return Response(data)
+
+
+@api_view(['POST', ])
+def story_downvote(request, pk):
+    story = generics.get_object_or_404(Story, pk=pk)
+    story.points -= 1
+    story.save()
+    data = {
+        'success': True
+    }
+    return Response(data)
