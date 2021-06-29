@@ -10,4 +10,6 @@ urlpatterns = [
     path('api/list/dreams/', views.DreamStoryList.as_view()),
     path('api/list/nightmares/', views.NightmareStoryList.as_view()),
     path('api/<int:pk>/', views.StoryDetail.as_view()),
+    path('api/up/<int:pk>/', views.story_upvote),
+    path('api/down/<int:pk>/', views.story_downvote),
 ]
