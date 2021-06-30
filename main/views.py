@@ -54,14 +54,14 @@ class NightmareStoryList(generics.ListCreateAPIView):
 """
 class StoryDetail(APIView):
 
-    def get_object(self, pk):
+    def get_object(self, story_slug):
         try:
-            return Story.objects.get(pk=pk)
+            return Story.objects.get(slug=story_slug)
         except Story.DoesNotExit:
             raise Http404
 
-    def get(self, request, pk, format=None):
-        story = self.get_object(pk)
+    def get(self, request, story_slug, format=None):
+        story = self.get_object(story_slug)
         serializer = StorySerializer(story)
         return Response(serializer.data)
 
