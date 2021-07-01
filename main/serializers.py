@@ -9,8 +9,9 @@ class StorySerializer(serializers.ModelSerializer):
             "id", 
             "title",
             "body",
+            "truncateBody",
+            "dop",
             "get_absolute_url",
-            "pub_date",
             "type_of_story",
             "points"
         )

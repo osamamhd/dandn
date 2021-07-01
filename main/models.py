@@ -22,5 +22,15 @@ class Story(models.Model):
     def __str__(self):
         return self.title
 
+    def dop(self):
+        return self.pub_date.strftime('%b %d, %Y')
+
+    def truncateBody(self):
+        trancateBy = 200
+        if len(f'{self.body}') > trancateBy:
+            return f'{self.body}'[:trancateBy] + '...'
+        else:
+            return f'{self.body}'
+
     def get_absolute_url(self):
         return f'/{self.slug}/'
