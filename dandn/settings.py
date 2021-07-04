@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'u-2@gh6#n0_k$exyk=!y19r$t$@q-2$6$7c$r-!2s))=s&z+^&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['dreamsandnightmares.pythonanywhere.com', '127.0.0.1']
 
